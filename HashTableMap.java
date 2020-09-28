@@ -45,6 +45,7 @@ public class HashTableMap<KeyType, ValueType> implements MapADT<KeyType,ValueTyp
 
     }
 
+
     /**
      * This instantiates an array of size (capacity) and fills it with
      * empty linked lists
@@ -104,11 +105,13 @@ public class HashTableMap<KeyType, ValueType> implements MapADT<KeyType,ValueTyp
         int i = 0;
         boolean found = false;
         while (!found) { //check if key is found
+            System.out.println("size "+keyArray[placement].size());
             if (i>= keyArray[placement].size()){ //check to see if whole array is seached
                 throw new NoSuchElementException(); //throw if not found
             }
             Object newKey=(keyArray[placement].get(i).getKey());
             if (newKey.equals(key)){ //check keys in table for match to search
+                System.out.println("found");
                 found = true;
                 return (ValueType)(keyArray[placement].get(i).getValue()); //return value
             }
@@ -231,5 +234,3 @@ public class HashTableMap<KeyType, ValueType> implements MapADT<KeyType,ValueTyp
 
 
 }
-
-
