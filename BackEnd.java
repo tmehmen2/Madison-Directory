@@ -1,4 +1,18 @@
+// --== CS400 File Header Information ==--
+// Name: Anush Ram Reddy Kethi Reddy
+// Email: akethireddy@wisc.edu
+// Team: LD
+// Role: Backend Engineer
+// TA: Divyanshu Saxena
+// Lecturer: Gary Dahl
+// Notes to Grader: <optional extra notes>
+
+
+
+
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.NoSuchElementException;
 
 
 /*BackEnd Developer: Mostly implement the search functionality and how they return
@@ -24,30 +38,62 @@ import java.util.ArrayList;
         This should return the same size list as the on entered*/
 
 public class BackEnd {
-    public Apartment searchByName(String name, HashTableMap apartmentMap){
-        Apartment returnApartment = new Apartment("1","2",3,5,"5");
-
+    public Apartment searchByName(String name, HashTableMap<String,Apartment> apartmentMap){
+        Apartment returnApartment;
+        try {
+            returnApartment = apartmentMap.get(name);
+        }
+        catch (NoSuchElementException e){
+            returnApartment = null;
+        }
         return returnApartment;
     }
 
-    public ArrayList<Apartment> searchByLoc(String address, HashTableMap apartmentMap){
-        ArrayList<Apartment> returnApartments = new ArrayList<Apartment>();
+    public ArrayList<Apartment> searchByLoc(String address, HashTableMap<String,ArrayList<Apartment>> apartmentMap){
+        ArrayList<Apartment> returnApartments;
+        try {
+            returnApartments = apartmentMap.get(address);
+        }
+        catch (NoSuchElementException e){
+            returnApartments = null;
+        }
 
         return returnApartments;
     }
 
-    public ArrayList<Apartment> searchByRoomNum(int rooms, HashTableMap apartmentMap){
-        ArrayList<Apartment> returnApartments = new ArrayList<Apartment>();
+    public ArrayList<Apartment> searchByRoomNum(int rooms,HashTableMap<Integer,ArrayList<Apartment>> apartmentMap){
+        ArrayList<Apartment> returnApartments;
+        try {
+            returnApartments = apartmentMap.get(rooms);
+        }
+        catch (NoSuchElementException e){
+            returnApartments = null;
+        }
         return returnApartments;
     }
 
-    public ArrayList<Apartment> searchByPrice(float lowPrice, float highPrice, HashTableMap apartmentMap){
-        ArrayList<Apartment> returnApartments = new ArrayList<Apartment>();
+    public ArrayList<Apartment> searchByPrice(int priceRange,HashTableMap<Integer, ArrayList<Apartment>> apartmentMap){
+        ArrayList<Apartment> returnApartments;
+        try {
+            returnApartments = apartmentMap.get(priceRange);
+        }
+        catch (NoSuchElementException e){
+                returnApartments = null;
+            }
         return returnApartments;
     }
 
-    public ArrayList<Apartment> compareTo(ArrayList<Apartment> compareApartments, HashTableMap apartmentMap){
+    public ArrayList<Apartment> compareTo(ArrayList<String> compareApartments,
+                                          HashTableMap<String, Apartment> apartmentMap){
         ArrayList<Apartment> returnApartments = new ArrayList<Apartment>();
+        for (String apt : compareApartments){
+            try {
+                returnApartments.add(apartmentMap.get(apt));
+            }
+            catch (NoSuchElementException e){
+                returnApartments.add(null);
+            }
+        }
         return returnApartments;
     }
 }

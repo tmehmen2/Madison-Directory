@@ -1,4 +1,12 @@
 Allen House 23///2130 University Ave.///1///780.00///31934452345
-Allen House 24///2130 University Ave.///1///780.00///31934452345
-Allen House 25///2130 University Ave.///1///780.00///31934452345
-Allen House 12///2130 University Ave.///1///780.00///31934452345
+Allen House 24///2130 University Ave.///2///999.99///31934452345
+Allen House 25///2130 University Ave.///2///1000.00///31934452345
+Allen House 12///2130 University Ave.///3///1999.99///31934452345
+Allen House 15///2130 University Ave.///4///2000.00///31934452345
+Arden 15///1050 E Washington Ave.///4///2000.00///6085120286
+Arden 16///1050 E Washington Ave.///2///1000.00///6085120286
+Arden 17///1050 E Washington Ave.///1///985.00///6085120286
+Arden 25///1050 E Washington Ave.///3///1200.00///6085120286
+Arden 26///1050 E Washington Ave.///4///1100.00///6085120286
+Allen House 5///2130 University Ave///5///675.0///3187657865
+Big Apartment 23///546 University Ave.///10///6000.0///3469088765
